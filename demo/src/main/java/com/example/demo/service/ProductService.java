@@ -20,8 +20,8 @@ public class ProductService {
         return repo.findAll();
     }
 
-    public void save(Product product) {
-        repo.save(product);
+    public Product save(Product product) {
+      return  repo.save(product);
     }
 
     public Product get(Integer id) {
@@ -30,5 +30,10 @@ public class ProductService {
 
     public void delete(Integer id) {
         repo.deleteById(id);
+    }
+
+    public void deleteAll (){
+
+        repo.deleteAll();
     }
 }

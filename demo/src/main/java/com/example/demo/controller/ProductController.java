@@ -28,20 +28,25 @@ return service.get (id);
 
 
 @PostMapping ("/products")
-    public void add (@RequestBody Product product){
-        service.save (product);
+    public Product add (@RequestBody Product product){
+       return service.save (product);
 
 }
 
 @PutMapping ("/products/{id}")
-    public void update (@RequestBody Product product, @PathVariable Integer id){
-        service.save (product);
+    public Product update (@RequestBody Product product, @PathVariable Integer id){
+        return service.save (product);
 
 }
 
 @DeleteMapping ("/products/{id}")
-public void delete (@PathVariable Integer id) {
+public void deleteById (@PathVariable Integer id) {
         service.delete (id);
+}
+@DeleteMapping ("/products")
+    public void deleteAll (){
+        service.deleteAll();
+
 }
 
 }
